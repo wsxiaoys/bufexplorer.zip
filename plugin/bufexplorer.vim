@@ -712,7 +712,7 @@ function! s:SelectBuffer(...)
     endif
 
     if bufexists(_bufNbr)
-        if bufnr("#") == _bufNbr && !exists("g:bufExplorerChgWin")
+        if g:bufExplorerFindActive && bufnr("#") == _bufNbr && !exists("g:bufExplorerChgWin")
             return s:Close()
         endif
 
